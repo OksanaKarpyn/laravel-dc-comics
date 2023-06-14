@@ -5,8 +5,8 @@
         </div>
         <div>
             <ul class="">
-                <li><a href="#">CHARACTERS-index</a></li>
-                <li><a href="#">COMICS-show</a></li>
+                <li><a href="{{ route('pippo.index') }}">CHARACTERS-Index</a></li>
+                <li><a href="{{ route('pippo.create') }}">COMICS-Create</a></li>
                 <li><a href="#">MOVIES</a></li>
                 <li><a href="#">TV</a></li>
                 <li><a href="#">GAMES</a></li>

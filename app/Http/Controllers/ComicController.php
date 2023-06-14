@@ -25,7 +25,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.create');
     }
 
     /**
@@ -36,7 +36,19 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $datiForm = $request->all();
+        // dd($datiForm);
+        $newFumetti = new Comic();
+        $newFumetti -> title = $datiForm['title'];
+        $newFumetti -> description = $datiForm['description'];
+        $newFumetti -> thumb = $datiForm['thumb'];
+        $newFumetti -> price = $datiForm['price'];
+        $newFumetti -> series = $datiForm['series'];
+        $newFumetti -> sale_date = $datiForm['sale_date'];
+        $newFumetti -> type = $datiForm['type'];
+        $newFumetti -> save();
+        return redirect()->route('pippo.index');
     }
 
     /**
