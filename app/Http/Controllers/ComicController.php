@@ -45,9 +45,10 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $comic)
+    public function show($id)
     {
-        //
+        $singleComic = Comic::find($id);
+        return view('pages.show',compact('singleComic'));
     }
 
     /**
@@ -56,6 +57,7 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
+   
     public function edit(Comic $comic)
     {
         //

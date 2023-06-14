@@ -6,14 +6,16 @@
         <a href="#" class="btn  button p-2  px-4">current series</a>
 
         @foreach( $varComics as $elem)
-        <div class="card" style="width: 18rem;">
-            <img src="{{ $elem['thumb'] }}" alt="...">
-            <div class="card-body">
-                <p class="card-text">hello index</p>
-                <p class="card-text">hello</p>
+        <a href="/pippo/{{$elem['id']}}">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ $elem['thumb'] }}" alt="...">
+                <div class="card-body">
+                    <p class="card-text">hello index</p>
+                    <p class="card-text">hello</p>
 
+                </div>
             </div>
-        </div>
+        </a>
         @endforeach
 
         <a href="#" class="load p-2  px-5">load more</a>

@@ -12,5 +12,5 @@ use App\Http\Controllers\ComicController as ComicController ;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::resource('/', ComicController::class);
+// pippo lo scritta io
+Route::resource('/pippo', ComicController::class);
