@@ -39,16 +39,18 @@ class ComicController extends Controller
         
         $datiForm = $request->all();
         // dd($datiForm);
-        $newFumetti = new Comic();
-        $newFumetti -> title = $datiForm['title'];
-        $newFumetti -> description = $datiForm['description'];
-        $newFumetti -> thumb = $datiForm['thumb'];
-        $newFumetti -> price = $datiForm['price'];
-        $newFumetti -> series = $datiForm['series'];
-        $newFumetti -> sale_date = $datiForm['sale_date'];
-        $newFumetti -> type = $datiForm['type'];
-        $newFumetti -> save();
-        return redirect()->route('pippo.index');
+         $newFumetti = new Comic();
+        // $newFumetti -> title = $datiForm['title'];
+        // $newFumetti -> description = $datiForm['description'];
+        // $newFumetti -> thumb = $datiForm['thumb'];
+        // $newFumetti -> price = $datiForm['price'];
+        // $newFumetti -> series = $datiForm['series'];
+        // $newFumetti -> sale_date = $datiForm['sale_date'];
+        // $newFumetti -> type = $datiForm['type'];
+        
+        $newFumetti->fill($datiForm);
+        $newFumetti ->save();
+        return redirect()->route('comics.index');
     }
 
     /**
@@ -72,7 +74,7 @@ class ComicController extends Controller
    
     public function edit(Comic $comic)
     {
-        //
+        return view('pages.edit',compact('comic'));
     }
 
     /**
@@ -84,7 +86,10 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $mario = $request->all();
+     
+        $comic->update($mario);
+         return redirect()->route('comics.index');
     }
 
     /**

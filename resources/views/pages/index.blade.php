@@ -6,14 +6,15 @@
         <a href="#" class="btn  button p-2  px-4">current series</a>
 
         @foreach( $varComics as $elem)
-        <a href="/pippo/{{$elem['id']}}">
+        <a href="/comics/{{$elem['id']}}">
             <div class="card" style="width: 18rem;">
                 <img src="{{ $elem['thumb'] }}" alt="...">
                 <div class="card-body">
-                    <p class="card-text">hello index</p>
-                    <p class="card-text">hello</p>
+                    <p class="card-text">{{ $elem['title'] }}</p>
+                    <p class="card-text">{{ $elem['series'] }}</p>
 
                 </div>
+                <a href="{{ route('comics.edit',$elem )}}" class="btn btn-warning">edit</a>
             </div>
         </a>
         @endforeach

@@ -6,6 +6,8 @@
     <div class="card-body">
         <p class="card-title">{{$singleComic['title']}}</p>
         <p class="card-text">{{$singleComic['series']}}</p>
+        <p class="card-text">{{$singleComic['price']}}</p>
+
 
     </div>
 </div>
