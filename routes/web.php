@@ -12,7 +12,7 @@ use App\Http\Controllers\ComicController as ComicController ;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::get('/',[ComicController::class,'index'] )->name('index');
+Route::get('/',[ComicController::class,'index'] )->name('index');
 
 // pippo lo scritta io
 Route::resource('/comics', ComicController::class);

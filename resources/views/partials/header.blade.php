@@ -7,7 +7,7 @@
             <ul class="">
                 <li><a href="{{ route('comics.index') }}">CHARACTERS-Index</a></li>
                 <li><a href="{{ route('comics.create') }}">COMICS-Create</a></li>
-                <li><a href="#">MOVIES-edit</a></li>
+                <li><a href="#">MOVIES</a></li>
                 <li><a href="#">TV</a></li>
                 <li><a href="#">GAMES</a></li>
                 <li><a href="#">COLLECTIBLES</a></li>
