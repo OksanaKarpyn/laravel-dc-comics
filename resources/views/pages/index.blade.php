@@ -19,7 +19,7 @@
                 <form action="{{ route('comics.destroy', $elem) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger w-100">elimina</button>
+                    <button onclick="return deleteElem()" type="submit" class="btn btn-danger w-100">elimina</button>
                 </form>
             </div>
         </a>
@@ -55,5 +55,19 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+@endsection
+@section('script')
+
+function deleteElem() {
+return confirm( 'Sei sicuro di voler eleminare elemnto?');
+}
 
 @endsection

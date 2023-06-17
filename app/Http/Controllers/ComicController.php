@@ -36,6 +36,19 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                'title' => 'required|unique:comics|max:35',
+                'description' => 'required|max:500',
+            ],
+            [
+                'title.required'=> 'il campo e richiesto essere compilato',
+                'title.unique' =>'il titolo deve essere unico',
+                'title.max' => 'il campo title non deve superare i 35 caratteri',
+                'description.required' =>'il campo e richiesto essere compilato',
+                'description.max' => 'il campo title non deve superare i 500 caratteri',
+            ],
+            );
         
         $datiForm = $request->all();
         // dd($datiForm);
@@ -85,7 +98,23 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Comic $comic)
+    
     {
+
+
+        $request->validate(
+            [
+                'title' => 'required|unique:comics|max:35',
+                'description' => 'required|max:500',
+            ],
+            [
+                'title.required'=> 'il campo e richiesto essere compilato',
+                'title.unique' =>'il titolo deve essere unico',
+                'title.max' => 'il campo title non deve superare i 35 caratteri',
+                'description.required' =>'il campo e richiesto essere compilato',
+                'description.max' => 'il campo title non deve superare i 500 caratteri',
+            ],
+            );
         $modf_Fumetto = $request->all();
      
         $comic->update($modf_Fumetto);

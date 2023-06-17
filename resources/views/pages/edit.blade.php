@@ -2,19 +2,37 @@
 @section('content')
 <div class="container my-5">
     <h2>Form edit comics</h2>
+
+    @if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+            <li> {{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <form action="{{ route('comics.update', $comic )}}" method="POST">
         <!-- questo e un token  informativa che larav converte in input  che trassmette inf univoca-->
         @csrf
         @method('PUT')
         <div class="form-group my-3">
             <label for="comics-title" class="form-label">comics-title</label>
-            <input type="text" id="comics-title" class="form-control" placeholder="inserisci titolo" name="title"
-                value="{{ $comic->title }}">
+            <input type="text" id="comics-title" class="form-control @error('title')  is-invalid @enderror"
+                placeholder="inserisci titolo" name="title" value="{{ $comic->title }}">
+
+            @error('title')
+            <div class="alert alert-danger">{{$message}}</div>
+            @enderror
         </div>
         <div class="form-group my-3">
             <label for="comics-description" class="form-label">comics-description</label>
-            <textarea class="form-control" placeholder="Leave a comment here" id="comics-description"
-                name="description">{{ $comic->description }}</textarea>
+            <textarea class="form-control @error('title')  is-invalid @enderror" placeholder="Leave a comment here"
+                id="comics-description" name="description">{{ $comic->description }}</textarea>
+            @error('description')
+            <div class="alert alert-danger">{{$message}}</div>
+            @enderror
         </div>
         <div class="form-group my-3">
             <label for="comics-thumb" class="form-label">comics-thumb</label>

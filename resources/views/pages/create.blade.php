@@ -8,7 +8,11 @@
 
         <div class="form-group my-3">
             <label for="comics-title" class="form-label">comics-title</label>
-            <input type="text" id="comics-title" class="form-control" placeholder="inserisci titolo" name="title">
+            <input type="text" id="comics-title" class="form-control @error('title')  is-invalid @enderror"
+                placeholder="inserisci titolo" name="title">
+            @error('title')
+            <div class="alert alert-danger">{{$message}}</div>
+            @enderror
         </div>
         <div class="form-group my-3">
             <label for="comics-description" class="form-label">comics-description</label>
